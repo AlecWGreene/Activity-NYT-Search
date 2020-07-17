@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Times Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+
+</head>
+<body>
+
+    <header class="jumbotron">
+        <h1 class="text-center"><strong><i class="fa fa-newspaper-o"></i> New York Times Search</strong></h1>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <!-- <h2>Search Par</h2> -->
+            <div class="panel panel-default">
+              <div class="panel-body">Search Parameters</div>
+              <form>
+
+                <div class="form-group">
+                    <label for="search-term">Search Term:</label>
+                    <input type="email" class="form-control" id="search-term">
+                </div>
+
+                <div class="slider-group">
+                    <label for="slider-1">Number of Records to Retrieve:<span id="slider1-span"></span></label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="slider-1">
+                    <label for="slider-2">Start Year (Optional):<span id="slider2-span"></span></label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="slider-2">
+                    <label for="slider-3">End Year (Optional):<span id="slider3-span"></span></label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="slider-3">
+                </div>
+
+                <div class="btn-group" id="buttons">
+                    <button type="submit" class="btn btn-primary" id="search"><i class="fas fa-search"></i> Search</button>
+                    <button type="submit" class="btn btn-primary" id="clear-results"><i class="fas fa-delete"></i> Clear Results</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+    </main>
+</body>
+</html>
