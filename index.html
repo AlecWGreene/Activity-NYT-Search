@@ -21,40 +21,55 @@
 <body>
 
     <header class="jumbotron">
-        <h1 class="text-center"><strong><i class="fa fa-newspaper-o"></i> New York Times Search</strong></h1>
+        
+        <h1 class="text-center"><strong><i class="far fa-newspaper"></i> New York Times Search</strong></h1>
+
     </header>
+
 
     <main>
         
-
         <div class="container">
+
             <!-- <h2>Search Par</h2> -->
             <div class="panel panel-default">
-              <div class="panel-body">Search Parameters</div>
-              <form>
+                <div class="panel-body">Search Parameters</div>
 
-                <div class="form-group">
-                    <label for="search-term">Search Term:</label>
-                    <input type="email" class="form-control" id="search-term">
+                    <form>
+
+                        <div class="form-group">
+
+                            <label for="search-term">Search Term:</label>
+                            <input type="email" class="form-control" id="search-term">
+
+                        </div>
+
+                        <div class="slider-group">
+
+                            <label for="slider-1">Number of Records to Retrieve:<span id="slider1-span"></span></label>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider-1">
+
+                            <label for="slider-2">Start Year (Optional):<span id="slider2-span"></span></label>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider-2">
+
+                            <label for="slider-3">End Year (Optional):<span id="slider3-span"></span></label>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="slider-3">
+
+                        </div>
+
+                        <div class="btn-group" id="buttons">
+                            <button type="submit" class="btn btn-primary" id="search"><i class="fas fa-search"></i> Search</button>
+                            <button type="submit" class="btn btn-primary" id="clear-results"><i class="fas fa-trash-alt"></i> Clear Results</button>
+                        </div>
+
+                    </form>
+
                 </div>
 
-                <div class="slider-group">
-                    <label for="slider-1">Number of Records to Retrieve:<span id="slider1-span"></span></label>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="slider-1">
-                    <label for="slider-2">Start Year (Optional):<span id="slider2-span"></span></label>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="slider-2">
-                    <label for="slider-3">End Year (Optional):<span id="slider3-span"></span></label>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="slider-3">
-                </div>
-
-                <div class="btn-group" id="buttons">
-                    <button type="submit" class="btn btn-primary" id="search"><i class="fas fa-search"></i> Search</button>
-                    <button type="submit" class="btn btn-primary" id="clear-results"><i class="fas fa-trash"></i> Clear Results</button>
-                </div>
-
-              </form>
             </div>
-          </div>
+
+
+        </div>
 
     </main>
 
@@ -65,6 +80,8 @@
 
 <!-- moment api library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<script src="https://use.fontawesome.com/a5c9208b33.js"></script>
 
 <!-- javascript relative path -->
 <script src="script.js"></script>
