@@ -8,11 +8,11 @@
 var $queryInputField = $("#search-term");
 
 /** The slider representing the number of changes to make */
-var $resultCountSlider = $("#slider1");
+var $resultCountSlider = $("#slider-1");
 /** The slider representing the starting year to search from */
-var $beginDateSlider = $("#slider2");
+var $beginDateSlider = $("#slider-2");
 /** The slider representing the ending year to search to */
-var $endDateSlider = $("#slider3");
+var $endDateSlider = $("#slider-3");
 
 /** The span to display the result count */
 var $resultCountSpan = $("#slider1-span");
@@ -150,29 +150,41 @@ function displayArticle(a_article){
  
 function handleSliderChange(a_event){
     // Change number of results
-    if($(a_event.target).id() === $resultCountSlider.id()){
+    if($(a_event.target).attr("id") === $resultCountSlider.attr("id")){
+        
         // Update the span text
         $resultCountSpan.text($resultCountSlider.val());
+        
+        // Update the variable
+        searchCount = $resultCountSlider.val();
     }
     // Change begin date
-    else if($(a_event.target).id() === $beginDateSlider.id()){
+    else if($(a_event.target).attr("id") === $beginDateSlider.attr("id")){
+        
         // Update the span text
         $beginDateSpan.text($beginDateSlider.val());
+
+        // Update the variable
+        searchBegin = $beginDateSlider.val();
     }
     // Change end date
-    else if($(a_event.target).id() === $endDateSlider.id()){
+    else if($(a_event.target).attr("id") === $endDateSlider.attr("id")){
+       
         // Update the span text
-        $endDateSpan.text($endDateSlider);
+        $endDateSpan.text($endDateSlider.val());
+
+        // Update the variable
+        searchEnd = $endDateSlider.val();
     }
 }
 
 function handleButtonClick(a_event){
     // Perform search
-    if($(a_event.target).id() === $searchButton.id()){
+    if($(a_event.target).attr("id") === $searchButton.attr("id")){
 
     }
     // Clear results
-    else if($(a_event.target).id() === $clearButton.id()){
+    else if($(a_event.target).attr("id") === $clearButton.attr("id")){
 
     }
 }
@@ -180,9 +192,9 @@ function handleButtonClick(a_event){
 function addListeners(){
     // Add listeners to text field
     //$queryInputField.on();
-
+    console.log("hi");
     // Add listeners to slider 
-    $("input").on("input", handleSliderChange);
+    $("input").on("change", handleSliderChange);
 
     // Add listeners to button
     $searchButton.on("click", handleButtonClick);
