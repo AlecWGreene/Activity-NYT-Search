@@ -32,7 +32,7 @@ var clearButton = $("");
   * --------------------------------------------------
 */
  
-  
+/** Alec's API Key */
 var apiKey = "&api-key=WGQYvCOMkpQnNaJjRkeKmRjTkz2xLvJi";
 
 /** Which group of query results to  */
