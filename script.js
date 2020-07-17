@@ -151,15 +151,18 @@ function displayArticle(a_article){
 function handleSliderChange(a_event){
     // Change number of results
     if($(a_event.target).id() === $resultCountSlider.id()){
-
+        // Update the span text
+        $resultCountSpan.text($resultCountSlider.val());
     }
     // Change begin date
     else if($(a_event.target).id() === $beginDateSlider.id()){
-
+        // Update the span text
+        $beginDateSpan.text($beginDateSlider.val());
     }
     // Change end date
     else if($(a_event.target).id() === $endDateSlider.id()){
-
+        // Update the span text
+        $endDateSpan.text($endDateSlider);
     }
 }
 
@@ -176,7 +179,7 @@ function handleButtonClick(a_event){
  
 function addListeners(){
     // Add listeners to text field
-    $queryInputField.on();
+    //$queryInputField.on();
 
     // Add listeners to slider 
     $("input").on("input", handleSliderChange);
@@ -186,4 +189,7 @@ function addListeners(){
     $clearButton.on("click", handleButtonClick);
 }
  
-
+// Runtime execution
+$(document).ready(function(){
+    addListeners();
+});
