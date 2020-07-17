@@ -81,10 +81,15 @@ class Article{
     }
 }
  
+/**
+ * Retrieves search results from the NYT API 
+ * 
+ * @param {String} a_string The string to query NYT for 
+ */
 function getSearchResults(a_string){
 
     /** The url to pass to the ajax call */
-    var t_url = queryURL + searchQuery;
+    var t_url = queryURL + searchQuery + a_string;
 
     /** The number of ajax calls to make */
     var t_numberPages = Math.floor(searchCount / 10);
@@ -99,10 +104,13 @@ function getSearchResults(a_string){
 
     // For each 10 articles requested
     for(let i = 0; i < t_numberPages; i++){
+        var t_responses;
+
         $.ajax({
             url: t_url,
             method: "GET"
         }).then(function(response){
+            t_responses.push(response.docs);
             console.log(response);
         });
     }
@@ -190,9 +198,7 @@ function handleButtonClick(a_event){
 }
  
 function addListeners(){
-    // Add listeners to text field
-    //$queryInputField.on();
-    console.log("hi");
+
     // Add listeners to slider 
     $("input").on("change", handleSliderChange);
 
